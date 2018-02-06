@@ -52,6 +52,7 @@ void printInfo() {
 int main() {
 	cout << "BMI Calculator" << endl << endl;
 
+	// printing info
 	printInfo();
 	cout << endl;
 
