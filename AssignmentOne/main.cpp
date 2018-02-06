@@ -7,20 +7,27 @@
 //==============================================================
 
 #include <iostream>
+
 #include "BMI.h"
+#include "Person.h"
 
 using namespace std;
 
 int main() {
-	cout << "BMI Calculator" << endl << endl;
+	//cout << "BMI Calculator" << endl << endl;
 
-	// printing info
-	printInfo();
-	cout << endl;
+	//printInfo();
+	//cout << endl;
 
-	readUserData();
-	calculateBMI();
-	evaluateAndPrintBMI();
+	//readUserData();
+	//calculateBMI();
+	//evaluateAndPrintBMI();
+
+	Person timon("Timon", "Kruiper", 31, 7, 1998);
+
+	cout << timon.getBirthDate() << endl;
+	cout << timon.getName() << endl;
+	cout << timon.getAge() << endl;
 
 	return 0;
 }
