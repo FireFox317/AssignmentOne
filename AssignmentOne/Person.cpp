@@ -19,10 +19,12 @@ void Person::setName(string first, string last)
 	lastName = last;
 }
 
-void Person::setBirthDate(int day, int month, int year)
+bool Person::setBirthDate(int day, int month, int year)
 {
+	bool correct = true;
 	if (day < 1 || day > 31) {
 		cout << "Day must be between 1-31" << endl;
+		correct = false;
 	}
 	else {
 		birthDay = day;
@@ -30,11 +32,13 @@ void Person::setBirthDate(int day, int month, int year)
 
 	if (month < 1 || month > 12) {
 		cout << "Month must be between 1-12" << endl;
+		correct = false;
 	}
 	else {
 		birthMonth = month;
 	}
 	birthYear = year;
+	return correct;
 }
 
 string Person::getName()
@@ -56,16 +60,25 @@ int Person::getAge()
 	localtime_s(&tminfo, &rawtime);
 	int currentyear = 1900 + tminfo.tm_year;
 	int currentmonth = tminfo.tm_mon + 1;
+	int currentday = tminfo.tm_mday;
 
-	int targetyear = birthYear;
-	int targetmonth = birthMonth;
+	int year;
 
-	if (targetmonth > currentmonth) {
-		return currentyear - targetyear - 1;
+	if (birthMonth > currentmonth) {
+		year = currentyear - birthYear - 1;
+	}
+	else if (birthMonth == currentmonth){
+		if (birthDay > currentday) {
+			year = currentyear - birthYear - 1;
+		}
+		else {
+			year = currentyear - birthYear;
+		}
 	}
 	else {
-		return currentyear - targetyear;
+		year = currentyear - birthYear;
 	}
+	return year;
 }
 
 
