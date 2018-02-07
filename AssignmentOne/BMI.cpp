@@ -11,11 +11,18 @@
 
 using namespace std;
 
-void readUserData(float weightUser, float heightUser) {
+float readUserWeight() {
+	float weightUser;
 	cout << "Your weight (kg): ";
 	cin >> weightUser;
+	return weightUser;
+}
+
+float readUserHeight() {
+	float heightUser;
 	cout << "Your length (m): ";
 	cin >> heightUser;
+	return heightUser;
 }
 
 float calculateBMI(float weightUser, float heightUser) {

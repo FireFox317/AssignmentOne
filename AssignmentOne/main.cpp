@@ -23,7 +23,8 @@ int main() {
 	printInfo();
 	cout << endl;
 
-	readUserData(weightUser,heightUser);
+	weightUser = readUserWeight();
+	heightUser = readUserHeight();
 	BMI = calculateBMI(weightUser, heightUser);
 	evaluateAndPrintBMI(BMI);
 

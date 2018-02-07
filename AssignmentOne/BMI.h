@@ -9,8 +9,11 @@
 #ifndef BMI_H
 #define BMI_H
 
-// this function takes 2 floats and uses these to ask the user to fill in their weight.
-void readUserData(float weightUser, float heightUser);
+// this function ask the user to fill in his/her weight.
+float readUserWeight();;
+
+// this function ask the user to fill in his/her height.
+float readUserHeight();
 
 // this function returns the BMI of a user.
 float calculateBMI(float weightUser, float heightUser);
