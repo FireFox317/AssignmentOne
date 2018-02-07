@@ -1,4 +1,7 @@
 #include "BMI.h"
+#include <iostream>
+
+using namespace std;
 
 float weightUser, heightUser, BMI;
 
