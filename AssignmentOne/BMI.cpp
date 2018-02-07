@@ -1,22 +1,28 @@
+//==============================================================
+// Filename : BMI.cpp
+// Authors : Timon Kruiper & ....
+// Version : 1
+// License :
+// Description : Source file containing BMI application
+//==============================================================
+
 #include "BMI.h"
 #include <iostream>
 
 using namespace std;
 
-float weightUser, heightUser, BMI;
-
-void readUserData() {
+void readUserData(float weightUser, float heightUser) {
 	cout << "Your weight (kg): ";
 	cin >> weightUser;
 	cout << "Your length (m): ";
 	cin >> heightUser;
 }
 
-void calculateBMI() {
-	BMI = weightUser / (heightUser*heightUser);
+float calculateBMI(float weightUser, float heightUser) {
+	return weightUser / (heightUser*heightUser);
 }
 
-void evaluateAndPrintBMI() {
+void evaluateAndPrintBMI(float BMI) {
 	cout << endl << "Your BMI is " << BMI << endl;
 	cout << "This BMI corresponds to ";
 	if (BMI < 18.5) {
