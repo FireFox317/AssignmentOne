@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include <string>
+#include <vector>
 
 class Person
 {
@@ -16,6 +17,8 @@ public:
 	std::string getBirthDate();
 
 	int getAge();
+	int calculateMaximumHeartRate();
+	std::vector<int> calculateTargetHeartRates();
 
 private:
 	std::string firstName, lastName;

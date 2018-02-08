@@ -81,4 +81,18 @@ int Person::getAge()
 	return year;
 }
 
+int Person::calculateMaximumHeartRate()
+{
+	return 220-Person::getAge();
+}
+
+vector<int> Person::calculateTargetHeartRates()
+{
+	vector<int> targetHeartRates(2);
+	int maxHeartRate = Person::calculateMaximumHeartRate();
+	targetHeartRates[0] = (int)(0.5 * maxHeartRate);
+	targetHeartRates[1] = (int)(0.85 * maxHeartRate);
+	return targetHeartRates;
+}
+
 
