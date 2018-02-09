@@ -19,9 +19,34 @@ void Person::setName(string first, string last)
 	lastName = last;
 }
 
-bool Person::setBirthDate(int day, int month, int year)
+bool Person::setBirthDate(string dob)
 {
 	bool correct = true;
+
+	string dayStr, monthStr, yearStr;
+	int day, month, year;
+
+	size_t index = dob.find("/");
+	if (index == string::npos) {
+		cout << "Format is DD/MM/YYYY!" << endl;
+		return false;
+	}
+
+	dayStr = dob.substr(0, index);
+	day = stoi(dayStr);
+	dob.erase(0, index + 1);
+
+	index = dob.find("/");
+	if (index == string::npos) {
+		cout << "Format is DD/MM/YYYY!" << endl;
+		return false;
+	}
+	monthStr = dob.substr(0, index);
+	month = stoi(monthStr);
+	dob.erase(0, index + 1);
+
+	year = stoi(dob);
+
 	if (day < 1 || day > 31) {
 		cout << "Day must be between 1-31" << endl;
 		correct = false;
@@ -48,7 +73,7 @@ string Person::getName()
 
 string Person::getBirthDate()
 {
-	return to_string(birthDay) + "-" + to_string(birthMonth) + "-" + to_string(birthYear);
+	return to_string(birthDay) + "/" + to_string(birthMonth) + "/" + to_string(birthYear);
 }
 
 int Person::getAge()

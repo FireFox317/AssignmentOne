@@ -11,7 +11,7 @@ public:
 	Person(std::string firstName, std::string lastName, int birthDay, int birthMonth, int birthYear);
 
 	void setName(std::string first, std::string last);
-	bool setBirthDate(int day, int month, int year);
+	bool setBirthDate(std::string dob);
 
 	std::string getName();
 	std::string getBirthDate();
