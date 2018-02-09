@@ -1,9 +1,9 @@
 //==============================================================
-// Filename :
-// Authors :
-// Version :
+// Filename : main.cpp
+// Authors : Timon Kruiper & Dang Dinh Viet Anh
+// Version : 1
 // License :
-// Description :
+// Description : Source file containing main function for the User application
 //==============================================================
 
 #include <iostream>
@@ -19,13 +19,14 @@ int main() {
 
 	string firstName, lastName;
 	cout << "What is your first name: ";
-	getline(cin, firstName);
+	getline(cin, firstName); // getline is used, because otherwise the user cannot use spaces
 
 	cout << "What is your last name: ";
 	getline(cin, lastName);
 	
 	person.setName(firstName, lastName);
 
+	// Ask the user their DOB and if it returns an error ask the user again
 	bool check = true;
 	while (check) {
 		string dob;
@@ -36,6 +37,7 @@ int main() {
 
 	cout << endl;
 
+	// show all information to the user
 	cout << "Full name: " << person.getName() << endl;
 	cout << "Date of birth: " << person.getBirthDate() << endl;
 	cout << "Age: " << person.getAge() << endl;
