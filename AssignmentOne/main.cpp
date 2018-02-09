@@ -1,6 +1,6 @@
 //==============================================================
 // Filename : main.cpp
-// Authors : Timon Kruiper & ....
+// Authors : Timon Kruiper & Dang Dinh Viet Anh
 // Version : 1
 // License :
 // Description : Source file containing main function for the BMI application

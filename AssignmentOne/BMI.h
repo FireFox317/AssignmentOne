@@ -1,6 +1,6 @@
 //==============================================================
 // Filename : BMI.h
-// Authors : Timon Kruiper & ....
+// Authors : Timon Kruiper & Dang Dinh Viet Anh
 // Version : 1
 // License :
 // Description : Header file containing functions for BMI application
